@@ -17,4 +17,4 @@ Issues = "https://github.com/yaggag7/ComfyUI-xingz/issues"
 
 [tool.comfy]
 PublisherId = "xingzhi"
-DisplayName = "xingz"
+DisplayName = "ComfyUI-xingz"
