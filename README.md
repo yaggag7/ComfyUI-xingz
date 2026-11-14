@@ -42,7 +42,7 @@ git clone https://github.com/yaggag7/ComfyUI-xingz.git xingz
 
 | 参数 | 默认 | 说明 |
 |---|---|---|
-| 对齐倍数 | 16 | 目标宽高都取这个数的倍数（喂 Qwen 建议 32） |
+| 对齐倍数 | 16 | 目标宽高都取这个数的倍数 |
 | 策略 | 最小像素改动 | 也可选：最小比例偏差 / 只放大 / 只缩小 |
 | 处理方式 | 缩放 | 重采样整图；选「裁切」则居中裁掉多出的像素，不重采样 |
 | 缩放算法 | lanczos | bicubic / bilinear / area / nearest-exact |
