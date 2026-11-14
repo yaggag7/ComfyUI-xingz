@@ -1,9 +1,14 @@
 [project]
 name = "xingz"
-description = "读取图像信息（宽度/高度/宽高比/百万像素/尺寸文本），宽高比与百万像素可直接连 ResolutionSelector；含图像规范（把图像改成模型合法的倍数尺寸）。"
+description = "读取图像尺寸与比例（宽高比、百万像素可直接连原生分辨率选择器），并把任意图像对齐到模型合法的倍数尺寸。Image info & size normalize nodes for ComfyUI."
 version = "3.0.0"
-license = { text = "MIT" }
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
 dependencies = []
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
 
 [project.urls]
 Repository = "https://github.com/yaggag7/ComfyUI-xingz"
@@ -11,5 +16,5 @@ Homepage = "https://github.com/yaggag7/ComfyUI-xingz"
 Issues = "https://github.com/yaggag7/ComfyUI-xingz/issues"
 
 [tool.comfy]
+PublisherId = "xingzhi"
 DisplayName = "xingz"
-Icon = ""
