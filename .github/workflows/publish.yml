@@ -15,17 +15,19 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v7
 
-      - name: Read version from pyproject.toml
+      - name: Read name and version from pyproject.toml
         id: version
         run: |
           VERSION=$(grep -m1 '^version = ' pyproject.toml | sed -E 's/.*"(.*)".*/\1/')
+          NAME=$(grep -m1 '^name = ' pyproject.toml | sed -E 's/.*"(.*)".*/\1/')
           echo "value=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "pyproject version: $VERSION"
+          echo "node_id=$NAME" >> "$GITHUB_OUTPUT"
+          echo "pyproject name: $NAME, version: $VERSION"
 
       - name: Check if this version is already published
         id: check
         run: |
-          CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://api.comfy.org/nodes/xingz/versions/${{ steps.version.outputs.value }}")
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://api.comfy.org/nodes/${{ steps.version.outputs.node_id }}/versions/${{ steps.version.outputs.value }}")
           echo "registry responded with $CODE"
           if [ "$CODE" = "200" ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; fi
 
