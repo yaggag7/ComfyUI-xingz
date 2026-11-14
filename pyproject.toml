@@ -1,0 +1,10 @@
+[project]
+name = "xingz"
+description = "读取图像信息（宽度/高度/宽高比/百万像素/尺寸文本），宽高比与百万像素可直接连 ResolutionSelector；含图像规范（把图像改成模型合法的倍数尺寸）。"
+version = "3.0.0"
+license = { text = "MIT" }
+dependencies = []
+
+[tool.comfy]
+DisplayName = "xingz"
+Icon = ""
