@@ -14,7 +14,27 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v7
+
+      - name: Read version from pyproject.toml
+        id: version
+        run: |
+          VERSION=$(grep -m1 '^version = ' pyproject.toml | sed -E 's/.*"(.*)".*/\1/')
+          echo "value=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "pyproject version: $VERSION"
+
+      - name: Check if this version is already published
+        id: check
+        run: |
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://api.comfy.org/nodes/xingz/versions/${{ steps.version.outputs.value }}")
+          echo "registry responded with $CODE"
+          if [ "$CODE" = "200" ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; fi
+
       - name: Publish Custom Node
+        if: steps.check.outputs.exists == 'false'
         uses: Comfy-Org/publish-node-action@main
         with:
           personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+
+      - name: Skip notice
+        if: steps.check.outputs.exists == 'true'
+        run: echo "Version ${{ steps.version.outputs.value }} already exists in the registry - nothing to publish. Bump the version to release."

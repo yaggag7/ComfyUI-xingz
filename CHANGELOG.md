@@ -1,9 +1,10 @@
 # 更新日志
 
-## v3.0.0
-- 节点包改名为 `xingz`（目录名、pyproject `name`、Manager 里的 DisplayName）。
+## v0.1.0
+- 首个发布版本；版本号由 3.0.0 重置为 0.1.0，功能与 3.0.0 完全一致，只是回到「早期版本」的编号。
+- 节点包名 `xingz`（目录名、pyproject `name`、Manager 里的 DisplayName）。
 - 节点类型名（`ImageAspectRatio` / `NormalizeImage`）与界面名不变，旧工作流不受影响。
-- 升级时先删掉旧的 `comfyui-image-aspect-ratio` 目录，避免两个包同时注册同名节点。
+- 已发布到 Comfy Registry：https://registry.comfy.org/nodes/xingz
 
 ## v2.9.0
 - 删除「尺寸规范」节点：算尺寸的活和「图像规范」重复，可用「图像规范」或原生「分辨率选择器」替代。

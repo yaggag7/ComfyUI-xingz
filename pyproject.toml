@@ -1,7 +1,7 @@
 [project]
 name = "xingz"
 description = "读取图像尺寸与比例（宽高比、百万像素可直接连原生分辨率选择器），并把任意图像对齐到模型合法的倍数尺寸。Image info & size normalize nodes for ComfyUI."
-version = "3.0.0"
+version = "0.1.0"
 license = { file = "LICENSE" }
 requires-python = ">=3.9"
 dependencies = []
