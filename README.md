@@ -33,12 +33,22 @@ ComfyUI 原生「分辨率选择器」只能手动选比例、手动填百万像
 
 ## 安装
 
+**方式一：ComfyUI Manager（推荐）**——在 Manager 的「安装自定义节点」里搜 `xingz`，或用命令行：
+
+```bash
+comfy node install xingz
+```
+
+已发布到 Comfy Registry：https://registry.comfy.org/nodes/xingz
+
+**方式二：git clone**
+
 ```bash
 cd ComfyUI/custom_nodes
 git clone https://github.com/yaggag7/ComfyUI-xingz.git xingz
 ```
 
-重启 ComfyUI，节点菜单里搜「图像信息」或「图像规范」。
+装完重启 ComfyUI，节点菜单里搜「图像信息」或「图像规范」。
 （下载 zip 手动解压也行，但文件夹必须叫 `xingz`。）
 
 ## 图像信息
