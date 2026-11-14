@@ -1,5 +1,11 @@
 # 更新日志
 
+## v0.1.1
+- 包 id / 安装名由 `xingz` 改为 `ComfyUI-xingz`（`[project] name` 变更 ⇒ 在注册表中是一个新包）。
+- 安装命令变为 `comfy node install ComfyUI-xingz`，安装目录为 `custom_nodes/ComfyUI-xingz`。
+- 节点类型名（`ImageAspectRatio` / `NormalizeImage`）不变，旧工作流连线不受影响。
+- 旧包 `xingz`（0.1.0）仍保留在注册表，可另行删除。
+
 ## v0.1.0
 - 首个发布版本；版本号由 3.0.0 重置为 0.1.0，功能与 3.0.0 完全一致，只是回到「早期版本」的编号。
 - 节点包名 `xingz`（目录名、pyproject `name`、Manager 里的 DisplayName）。
