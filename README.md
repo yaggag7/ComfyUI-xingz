@@ -6,13 +6,20 @@
 
 ## 安装
 
-1. 整个 `xingz` 目录放进：
+GitHub 仓库：<https://github.com/yaggag7/ComfyUI-xingz>
 
-   `ComfyUI/custom_nodes/xingz`
+```bash
+cd ComfyUI/custom_nodes
+git clone https://github.com/yaggag7/ComfyUI-xingz.git xingz
+```
 
-2. 重启 ComfyUI（Desktop 版：菜单/托盘里的 Restart，或直接退出重开），刷新网页。
+也可以下载仓库 zip 解压，把文件夹重命名为 `xingz` 放进 `ComfyUI/custom_nodes/`（目录名必须是 `xingz`）。
 
-3. 节点菜单里搜索 `图像信息`、`图像规范`（旧名 `图像宽高比` / `规范化图像` 也可），或搜 `宽高比`、`比例`、`aspect`；分类在「图像/分析」下。
+然后：
+
+1. 重启 ComfyUI（Desktop 版：菜单/托盘里的 Restart，或直接退出重开），刷新网页。
+
+2. 节点菜单里搜索 `图像信息`、`图像规范`（旧名 `图像宽高比` / `规范化图像` 也可），或搜 `宽高比`、`比例`、`aspect`；分类在「图像/分析」下。
 
 ## 节点一：图像信息
 
@@ -103,3 +110,7 @@
 - v2.5.0 给「尺寸规范」（v2.9.0 已删除）、「图像规范」加了第 5 个输出「参考分辨率」（INT）：原来的「分辨率」是 STRING，前端不允许连到 INT 输入口（比如「文本编码 Qwen 图像 2.1」的分辨率），所以另开一个整数口。已有输出的索引没变，旧连线不受影响。
 - v2.4.0 删掉了「按比例算尺寸」（AspectRatioSize）：它算尺寸的活和原生「分辨率选择器」（宽高比 + 百万像素 + 倍数）完全重叠，也和「尺寸规范」重叠。旧工作流里这个节点会显示丢失，把它替换成「分辨率选择器」或「图像规范」即可；需要回退就把 `backup/comfyui-image-aspect-ratio-v2.3.0\nodes.py` 拷回来。
 - v2.0 起输出从 11 个精简为 4 个：旧工作流里连到「批次/比例宽/比例高/比例文本/方向/标准画幅/画幅偏差」的线会断，需要手动重连。
+
+## 许可证
+
+MIT，见 [LICENSE](LICENSE)。

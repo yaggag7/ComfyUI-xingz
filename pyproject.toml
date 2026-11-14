@@ -5,6 +5,11 @@ version = "3.0.0"
 license = { text = "MIT" }
 dependencies = []
 
+[project.urls]
+Repository = "https://github.com/yaggag7/ComfyUI-xingz"
+Homepage = "https://github.com/yaggag7/ComfyUI-xingz"
+Issues = "https://github.com/yaggag7/ComfyUI-xingz/issues"
+
 [tool.comfy]
 DisplayName = "xingz"
 Icon = ""
